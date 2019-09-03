@@ -1,0 +1,14 @@
+.card{
+	/* max-width: 35rem; */
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.card-text{
+	padding-left:40px;
+	padding-right:40px;
+}
+
+.retweet-button{
+	text-align:center;
+}
