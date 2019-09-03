@@ -1,0 +1,13 @@
+.create_tweet_button_div{
+	position:fixed;
+	bottom:100px;
+	right:100px;
+}
+
+.create_tweet_button{
+	font-size:30px;
+}
+
+.create_tweet_submit_button{
+	width:100%;
+}
