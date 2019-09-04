@@ -8,18 +8,32 @@ class CreateTweetButton extends React.Component{
 	
 	constructor(props) {
 		super(props);
-		this.state = {tweetcontent: ""};
+		this.state = {
+			tweetcontent: "",
+			charsremaining:140
+		};
 	
 		this.handleChange = this.handleChange.bind(this);
 		this.submitNewTweet = this.submitNewTweet.bind(this);
 	}
 	
 	state = {
-		tweetcontent:""
+		tweetcontent:"",
+		charsremaining:140
+	}
+	
+	resetState(){
+		this.setState({
+			tweetcontent:"",
+			charsremaining:140
+		});
 	}
 	
 	handleChange(event) {
-		this.setState({"tweetcontent": event.target.value});
+		this.setState({
+			"tweetcontent": event.target.value, 
+			"charsremaining": 140 - event.target.value.length
+		});
 	}
 	
 	submitNewTweet(){
@@ -38,7 +52,7 @@ class CreateTweetButton extends React.Component{
 			})
 		}).then(res => res.json())
 		.then((data) => {
-			this.setState({tweetcontent:""});
+			this.resetState();
 			this.newTweetCreated();
 		});
 	}
@@ -59,8 +73,9 @@ class CreateTweetButton extends React.Component{
 						<div className="modal-content">
 							<div className="modal-body">
 								<div className="form-group">
-									<textarea className="form-control" id="tweetContentTextArea" rows="5" onChange={this.handleChange} value={this.state.tweetcontent}></textarea>
+									<textarea className="form-control" id="tweetContentTextArea" rows="5" maxLength="140" onChange={this.handleChange} value={this.state.tweetcontent}></textarea>
 								</div>
+								<div className="characters_count">{this.state.charsremaining} Characters Remaining</div>
 							</div>
 							<div className="modal-footer">
 								<button type="button" className="btn btn-primary text-center create_tweet_submit_button" data-dismiss="modal" onClick={this.submitNewTweet}>Submit</button>

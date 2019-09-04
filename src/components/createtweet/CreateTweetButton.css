@@ -11,3 +11,7 @@
 .create_tweet_submit_button{
 	width:100%;
 }
+
+.characters_count{
+	font-size:12px;
+}
