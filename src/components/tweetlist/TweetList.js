@@ -46,7 +46,8 @@ class TweetList extends React.Component {
 	}
 	
 	fetchTweets(){
-		fetch('http://localhost:4000/api/tweets/ordered')
+		let url = process.env.REACT_APP_TWITTER_CLONE_API_URL || "http://localhost:4000";
+		fetch(url + "/api/tweets/ordered")
 		.then(res => res.json())
 		.then((data) => {
 			this.setState({

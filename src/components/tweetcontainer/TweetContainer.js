@@ -12,7 +12,8 @@ class TweetContainer extends React.Component{
 	}
 	
 	retweet(id){
-		fetch("http://localhost:4000/api/retweet/"+id, {
+		let url = process.env.REACT_APP_TWITTER_CLONE_API_URL || "http://localhost:4000";
+		fetch(url + "/api/retweet/"+id, {
 			method: 'PUT'
 		}).then(res => res.json())
 		.then((data) => {
@@ -36,13 +37,13 @@ class TweetContainer extends React.Component{
 					<div className="row">
 						<div className="col-10">
 							<div className="row">
-								<div className="col-1 d-flex justify-content-start">
+								<div className="col-1 d-flex justify-content-start left_quote">
 									<FontAwesomeIcon icon={faQuoteLeft}/>
 								</div>
 								<div className="col-10">
 									{this.props.tweetObj.content}
 								</div>
-								<div className="col-1 d-flex justify-content-end">
+								<div className="col-1 d-flex justify-content-end right_quote">
 									<FontAwesomeIcon icon={faQuoteRight}/>
 								</div>
 							</div>

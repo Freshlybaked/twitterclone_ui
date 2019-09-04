@@ -1,5 +1,4 @@
 .card{
-	/* max-width: 35rem; */
 	margin-top:10px;
 	margin-bottom:10px;
 }
@@ -15,4 +14,16 @@
 
 .retweet_count{
 	font-size:14px;
+}
+
+.left_quote{
+	padding-bottom:10px;
+	margin-top:-10px;
+	color:#dcdcdc;
+}
+
+.right_quote{
+	padding-top:30px;
+	margin-bottom:-30px;
+	color:#dcdcdc;
 }

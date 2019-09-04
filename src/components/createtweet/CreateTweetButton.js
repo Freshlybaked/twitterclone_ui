@@ -42,7 +42,8 @@ class CreateTweetButton extends React.Component{
 			"retweets":0
 		}
 		
-		fetch("http://localhost:4000/api/tweets", {
+		let url = process.env.REACT_APP_TWITTER_CLONE_API_URL || "http://localhost:4000";
+		fetch(url + "/api/tweets", {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
