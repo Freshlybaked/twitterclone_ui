@@ -10,7 +10,7 @@
 }
 
 .retweet-button{
-	text-align:center;
+	/* float:right; */
 }
 
 .retweet_count{

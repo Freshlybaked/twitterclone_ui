@@ -33,18 +33,28 @@ class TweetContainer extends React.Component{
 		return (
 			<div className="card">
 				<div className="card-body">
-					<p className="card-text text-center">
-						<FontAwesomeIcon icon={faQuoteLeft}/>
-							&nbsp;{this.props.tweetObj.content}&nbsp;
-						<FontAwesomeIcon icon={faQuoteRight}/>
-					</p>
-					
-					<div className="d-flex justify-content-center">
-						<button className="btn btn-primary d-flex align-items-center" onClick={() => this.retweet(this.props.tweetObj.id)}>
-							<FontAwesomeIcon icon={faRetweet}/>
-							<span className="retweet_count">&nbsp;&nbsp;{this.state.retweets}</span>
-						</button>
-						
+					<div className="row">
+						<div className="col-10">
+							<div className="row">
+								<div className="col-1 d-flex justify-content-start">
+									<FontAwesomeIcon icon={faQuoteLeft}/>
+								</div>
+								<div className="col-10">
+									{this.props.tweetObj.content}
+								</div>
+								<div className="col-1 d-flex justify-content-end">
+									<FontAwesomeIcon icon={faQuoteRight}/>
+								</div>
+							</div>
+						</div>
+						<div className="col-2">
+							<div className="d-flex justify-content-end retweet-button">
+								<button className="btn btn-primary d-flex align-items-center" onClick={() => this.retweet(this.props.tweetObj.id)}>
+									<FontAwesomeIcon icon={faRetweet}/>
+									<span className="retweet_count">&nbsp;&nbsp;{this.state.retweets}</span>
+								</button>	
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
