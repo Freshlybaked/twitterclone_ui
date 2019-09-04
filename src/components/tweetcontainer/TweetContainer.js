@@ -39,9 +39,12 @@ class TweetContainer extends React.Component{
 						<FontAwesomeIcon icon={faQuoteRight}/>
 					</p>
 					
-					<div className="text-center">
-						<button className="btn btn-primary" onClick={() => this.retweet(this.props.tweetObj.id)}><FontAwesomeIcon icon={faRetweet}/></button>
-						<div>Retweets&nbsp;{this.state.retweets}</div>
+					<div className="d-flex justify-content-center">
+						<button className="btn btn-primary d-flex align-items-center" onClick={() => this.retweet(this.props.tweetObj.id)}>
+							<FontAwesomeIcon icon={faRetweet}/>
+							<span className="retweet_count">&nbsp;&nbsp;{this.state.retweets}</span>
+						</button>
+						
 					</div>
 				</div>
 			</div>
